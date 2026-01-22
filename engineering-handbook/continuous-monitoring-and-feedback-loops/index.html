@@ -1,0 +1,2604 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.echoes-eccch.eu/engineering-handbook/continuous-monitoring-and-feedback-loops/">
+      
+      
+        <link rel="prev" href="../code-versioning-and-open-source/">
+      
+      
+        <link rel="next" href="../deployment-environments-and-versioning/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Continuous Monitoring and Feedback Loops - Deliverable D6.2 Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#continuous-monitoring-and-feedback-loops" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Deliverable D6.2 Wiki" class="md-header__button md-logo" aria-label="Deliverable D6.2 Wiki" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Deliverable D6.2 Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Continuous Monitoring and Feedback Loops
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Deliverable D6.2 Wiki" class="md-nav__button md-logo" aria-label="Deliverable D6.2 Wiki" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Deliverable D6.2 Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECHOES D6.2 Tech Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering handbook
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Engineering handbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-versioning-and-open-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Versioning and Open-Source Nature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Continuous Monitoring and Feedback Loops
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Continuous Monitoring and Feedback Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-telemetry-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing Telemetry and Observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing Telemetry and Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-three-pillars-of-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Pillars of Observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Three Pillars of Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-all-three-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why All Three Matter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structured-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-key-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Key Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics Collection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics Collection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#essential-metric-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Essential Metric Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-monitoring-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Monitoring Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distributed Tracing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Distributed Tracing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-traces-reveal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Traces Reveal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-stack-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Stack Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring Stack Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-feedback-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-Time Feedback Mechanisms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-Time Feedback Mechanisms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canary-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canary Releases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Canary Releases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canary-deployment-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canary Deployment Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollout-strategy-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollout Strategy (Example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-rollback-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Rollback Triggers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated Rollback Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-trigger-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Trigger Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-considerations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-service-updates-and-ongoing-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling Service Updates and Ongoing Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling Service Updates and Ongoing Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zero-downtime-updates-for-critical-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zero-Downtime Updates (for Critical Services)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-windows-for-complex-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Windows (for Complex Updates)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-deprecation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Deprecation Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-strategy-by-severity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Strategy by Severity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-technical-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Technical Debt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring Technical Debt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Track
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioritization-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prioritization Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-debt-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Debt Register
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-environments-and-versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment, Environments, and Versioning Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development-processes-and-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Processes and Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation-standards-and-codification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Documentation Standards and Codification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-secrets-and-secure-sdlc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security, Data Protection, and Secrets Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-management-and-interoperability-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Management and Interoperability Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test-automation-and-quality-assurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Automation and Quality Assurance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards catalogue
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards catalogue
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/data-architecture-standards-and-formats-3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data architecture – standards and formats (from D6.2 §3.1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/deployment-and-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and infrastructure (from D6.2 §3.3)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/protocols-and-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols and APIs (from D6.2 §3.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/security-and-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and data privacy (from D6.2 §3.4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../standards-catalogue-old/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards catalogue old
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards catalogue old
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/api-protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols and APIs (D6.2 §3.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/data-standards-and-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data standards and formats (D6.2 §3.1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/deployment-and-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and infrastructure references (D6.2 §3.3)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/metadata-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata standards (D6.2 §3.1.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/rights-and-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rights and licensing metadata (D6.2 §3.5)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/security-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and data privacy (D6.2 §3.4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-telemetry-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing Telemetry and Observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing Telemetry and Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-three-pillars-of-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Pillars of Observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Three Pillars of Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-all-three-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why All Three Matter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structured-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-key-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Key Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics Collection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics Collection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#essential-metric-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Essential Metric Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-monitoring-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Monitoring Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distributed Tracing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Distributed Tracing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-traces-reveal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Traces Reveal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-stack-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Stack Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring Stack Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-feedback-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-Time Feedback Mechanisms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-Time Feedback Mechanisms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canary-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canary Releases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Canary Releases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canary-deployment-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canary Deployment Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollout-strategy-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollout Strategy (Example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-rollback-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Rollback Triggers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated Rollback Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-trigger-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Trigger Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-considerations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-service-updates-and-ongoing-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling Service Updates and Ongoing Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling Service Updates and Ongoing Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zero-downtime-updates-for-critical-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zero-Downtime Updates (for Critical Services)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-windows-for-complex-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Windows (for Complex Updates)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-deprecation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Deprecation Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-strategy-by-severity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Strategy by Severity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-technical-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Technical Debt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring Technical Debt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Track
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioritization-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prioritization Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-debt-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Debt Register
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="continuous-monitoring-and-feedback-loops">Continuous Monitoring and Feedback Loops</h1>
+<p>Once software is deployed, continuous monitoring ensures it remains healthy, performs well, and meets user needs. This page covers observability, real-time feedback mechanisms, and ongoing maintenance strategies.</p>
+<p>!!! note "Scope and Precedence"
+This page provides engineering implementation guidance for observability (logs, metrics, traces, feedback loops). Normative monitoring objectives, required signal sets, and federation-level monitoring expectations are defined in D6.2 §7.2 and the relevant monitoring requirements in Chapter 8. Where overlaps exist, Chapter 7/8 are authoritative.</p>
+<hr />
+<h2 id="implementing-telemetry-and-observability">Implementing Telemetry and Observability</h2>
+<p>Observability means understanding what is happening inside your systems based on external outputs. The three pillars of observability work together to provide complete system insight.</p>
+<h3 id="the-three-pillars-of-observability">The Three Pillars of Observability</h3>
+<table>
+<thead>
+<tr>
+<th>Pillar</th>
+<th>Purpose</th>
+<th>What It Provides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Logs</strong></td>
+<td>Detailed records of discrete events</td>
+<td>Context for debugging specific issues</td>
+</tr>
+<tr>
+<td><strong>Metrics</strong></td>
+<td>Numerical measurements over time</td>
+<td>Trends, patterns, and anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Traces</strong></td>
+<td>Request flows through distributed systems</td>
+<td>End-to-end visibility of request paths</td>
+</tr>
+</tbody>
+</table>
+<h4 id="why-all-three-matter">Why All Three Matter</h4>
+<ul>
+<li><strong>Logs</strong> explain what happened (and often why)</li>
+<li><strong>Metrics</strong> quantify how much/how often and support alerting</li>
+<li><strong>Traces</strong> show where time is spent and how requests propagate</li>
+</ul>
+<p>Together, they enable faster incident diagnosis and performance optimization.</p>
+<h3 id="structured-logging">Structured Logging</h3>
+<p>Structured logging uses a consistent, machine-parsable format (commonly JSON) rather than free-form text. This improves automated processing and cross-service correlation.</p>
+<table>
+<thead>
+<tr>
+<th>Benefit</th>
+<th>Practical Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Searchability</strong></td>
+<td>Query by fields (e.g., <code>request_id</code>, <code>user_id</code>, <code>error_code</code>)</td>
+</tr>
+<tr>
+<td><strong>Aggregation</strong></td>
+<td>Produce statistics across events (error rates, top endpoints)</td>
+</tr>
+<tr>
+<td><strong>Correlation</strong></td>
+<td>Link related events across services via correlation IDs</td>
+</tr>
+<tr>
+<td><strong>Automation</strong></td>
+<td>Trigger alerts on patterns and support routing/triage</td>
+</tr>
+</tbody>
+</table>
+<h4 id="recommended-key-practices">Recommended Key Practices</h4>
+<ul>
+<li><strong>Include standard fields</strong>: Timestamp, severity, service, environment, <code>request_id</code> (or equivalent)</li>
+<li><strong>Add domain fields</strong> where relevant (e.g., <code>object_id</code>, <code>collection</code>, <code>user_id</code>), avoiding sensitive data</li>
+<li><strong>Use consistent field names</strong> across services to support unified queries and dashboards</li>
+<li><strong>Propagate correlation IDs</strong> across service boundaries to enable end-to-end tracing</li>
+</ul>
+<h3 id="metrics-collection">Metrics Collection</h3>
+<p>Metrics track numerical values over time, enabling trend analysis and alerting.</p>
+<h4 id="essential-metric-types">Essential Metric Types</h4>
+<table>
+<thead>
+<tr>
+<th>Metric Type</th>
+<th>Example</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Counters</strong></td>
+<td>Total API requests</td>
+<td>Track cumulative events</td>
+</tr>
+<tr>
+<td><strong>Gauges</strong></td>
+<td>Active user sessions</td>
+<td>Monitor current state</td>
+</tr>
+<tr>
+<td><strong>Histograms</strong></td>
+<td>Request duration distribution</td>
+<td>Understand performance percentiles</td>
+</tr>
+<tr>
+<td><strong>Summaries</strong></td>
+<td>Request size quantiles</td>
+<td>Statistical analysis</td>
+</tr>
+</tbody>
+</table>
+<h4 id="common-monitoring-patterns">Common Monitoring Patterns</h4>
+<ul>
+<li><strong>RED method</strong>: Rate, Errors, Duration (for services)</li>
+<li><strong>USE method</strong>: Utilization, Saturation, Errors (for resources)</li>
+<li><strong>Four Golden Signals</strong>: Latency, traffic, errors, saturation</li>
+</ul>
+<p>!!! tip "Standard Formats"
+Prometheus format is widely adopted and supported by visualization tools like Grafana. Standard formats enable tool interoperability and reduce lock-in.</p>
+<h3 id="distributed-tracing">Distributed Tracing</h3>
+<p>In microservices architectures, a single user request may touch multiple services. Distributed tracing tracks the entire request flow.</p>
+<h4 id="what-traces-reveal">What Traces Reveal</h4>
+<ul>
+<li>Which services were involved in a request</li>
+<li>How long each service took to respond</li>
+<li>Where bottlenecks occur</li>
+<li>Which service failed in an error scenario</li>
+</ul>
+<h4 id="key-concepts">Key Concepts</h4>
+<ul>
+<li><strong>Span</strong>: A single operation within a trace (e.g., database query, API call)</li>
+<li><strong>Trace</strong>: Collection of spans representing a complete request flow</li>
+<li><strong>Context propagation</strong>: Passing trace IDs across service boundaries</li>
+</ul>
+<h4 id="implementation-considerations">Implementation Considerations</h4>
+<ul>
+<li><strong>Add minimal overhead</strong> — Tracing should not significantly slow down services</li>
+<li><strong>Sample strategically</strong> — Trace all errors; sample normal requests</li>
+<li><strong>Standardize on trace format</strong> — OpenTelemetry is a common cross-stack standard</li>
+</ul>
+<h3 id="monitoring-stack-architecture">Monitoring Stack Architecture</h3>
+<p>A complete monitoring setup integrates logs, metrics, and traces.</p>
+<p><img alt="Pull request workflow" src="../../internal-assets/monit-stack.svg" /></p>
+<h4 id="component-roles">Component Roles</h4>
+<ul>
+<li><strong>Log aggregation</strong> (Loki / Elasticsearch): Centralize and search logs</li>
+<li><strong>Metrics storage</strong> (Prometheus): Time-series storage for metrics</li>
+<li><strong>Trace storage</strong> (Jaeger / Tempo): Store and query distributed traces</li>
+<li><strong>Visualization</strong> (Grafana): Unified dashboards for telemetry</li>
+<li><strong>Alerting</strong> (Alertmanager): Route alerts based on conditions and rules</li>
+</ul>
+<p>!!! tip "Integrated Monitoring"
+Problems are easier to diagnose when you can correlate metrics spikes with specific log entries and trace the affected requests end-to-end.</p>
+<hr />
+<h2 id="real-time-feedback-mechanisms">Real-Time Feedback Mechanisms</h2>
+<p>Real-time feedback during deployments helps catch issues before they affect all users.</p>
+<h3 id="canary-releases">Canary Releases</h3>
+<p>Deploy new versions to a small subset of users first, monitoring closely before full rollout.</p>
+<pre><code>[Load Balancer]
+├─ 95% traffic → [Version 2.0] (stable)
+└─ 5% traffic → [Version 2.1] (canary)
+</code></pre>
+<h4 id="canary-deployment-monitoring">Canary Deployment Monitoring</h4>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Acceptable Range</th>
+<th>Action if Exceeded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Error rate</td>
+<td>&lt; 1% increase</td>
+<td>Immediate rollback</td>
+</tr>
+<tr>
+<td>Response time</td>
+<td>&lt; 10% increase</td>
+<td>Investigate; possible rollback</td>
+</tr>
+<tr>
+<td>Resource usage</td>
+<td>&lt; 20% increase</td>
+<td>Monitor; adjust capacity</td>
+</tr>
+<tr>
+<td>User behavior anomalies</td>
+<td>No significant change</td>
+<td>Investigate unexpected patterns</td>
+</tr>
+</tbody>
+</table>
+<h4 id="rollout-strategy-example">Rollout Strategy (Example)</h4>
+<ol>
+<li>Deploy to 5% of traffic</li>
+<li>Monitor for 15–30 minutes</li>
+<li>If stable, increase to 25%</li>
+<li>Continue monitoring, increase to 50%</li>
+<li>Complete rollout to 100%</li>
+</ol>
+<p>!!! tip "Why Canary Releases Work"
+Issues affect only a small fraction of users initially, minimizing impact while providing real-world validation.</p>
+<h3 id="automated-rollback-triggers">Automated Rollback Triggers</h3>
+<p>Define conditions that trigger automatic rollback without human intervention.</p>
+<h4 id="common-trigger-conditions">Common Trigger Conditions</h4>
+<ul>
+<li>Error rate exceeds threshold (e.g., 5% of requests)</li>
+<li>Response time increases beyond acceptable limit (e.g., p95 &gt; 2 seconds)</li>
+<li>Critical health check failures</li>
+<li>Resource exhaustion (CPU &gt; 90%, memory &gt; 95%)</li>
+</ul>
+<h4 id="benefits">Benefits</h4>
+<ul>
+<li><strong>Immediate response</strong> to problems (no waiting for human detection)</li>
+<li><strong>Reduced MTTR</strong> (mean time to recovery)</li>
+<li><strong>Protection</strong> from prolonged degraded user experience</li>
+<li><strong>24/7 operation</strong> outside business hours</li>
+</ul>
+<h4 id="implementation-considerations_1">Implementation Considerations</h4>
+<ul>
+<li>Set thresholds carefully to avoid false positives</li>
+<li>Ensure rollback is well-tested</li>
+<li>Log all automated rollbacks for post-mortem analysis</li>
+<li>Alert humans even when automatic rollback succeeds</li>
+</ul>
+<h3 id="feature-flags">Feature Flags</h3>
+<p>Feature flags enable/disable functionality without redeployment, decoupling deployment from feature activation.</p>
+<h4 id="use-cases">Use Cases</h4>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Testing in production</td>
+<td>Limited exposure to real users</td>
+</tr>
+<tr>
+<td>Quick rollback</td>
+<td>Toggle flag instead of redeploying</td>
+</tr>
+<tr>
+<td>A/B testing</td>
+<td>Different features for different user segments</td>
+</tr>
+<tr>
+<td>Gradual rollouts</td>
+<td>Increase feature exposure progressively</td>
+</tr>
+<tr>
+<td>Kill switches</td>
+<td>Disable problematic features instantly</td>
+</tr>
+</tbody>
+</table>
+<h4 id="implementation-patterns">Implementation Patterns</h4>
+<ul>
+<li><strong>Simple boolean flags</strong> for on/off features</li>
+<li><strong>Percentage-based rollouts</strong> (e.g., show to 20% of users)</li>
+<li><strong>User segment targeting</strong> (e.g., beta testers)</li>
+<li><strong>Time-based flags</strong> (activate at specific times)</li>
+</ul>
+<p>!!! tip "Deployment vs. Activation"
+Traditional deployments couple code shipping with feature activation. Feature flags allow shipping code safely, then enabling features gradually (or disabling instantly if issues appear).</p>
+<hr />
+<h2 id="handling-service-updates-and-ongoing-maintenance">Handling Service Updates and Ongoing Maintenance</h2>
+<p>Services require continuous care beyond initial deployment, including updates, migrations, deprecation, and end-of-life management.</p>
+<h3 id="update-strategies">Update Strategies</h3>
+<h4 id="zero-downtime-updates-for-critical-services">Zero-Downtime Updates (for Critical Services)</h4>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>How It Works</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rolling updates</strong></td>
+<td>Replace instances gradually, one at a time</td>
+<td>Stateless services</td>
+</tr>
+<tr>
+<td><strong>Blue-green deployment</strong></td>
+<td>Two identical environments; switch traffic instantly</td>
+<td>Mission-critical services needing instant rollback</td>
+</tr>
+<tr>
+<td><strong>Database migrations</strong></td>
+<td>Backward-compatible changes in multiple steps</td>
+<td>Schema changes that must remain compatible</td>
+</tr>
+</tbody>
+</table>
+<h4 id="maintenance-windows-for-complex-updates">Maintenance Windows (for Complex Updates)</h4>
+<p>Best practices for scheduled maintenance:</p>
+<ul>
+<li><strong>Schedule during lowest-usage periods</strong> (analyze traffic patterns first)</li>
+<li><strong>Announce well in advance</strong> (minimum 1 week for minor; 1 month for major)</li>
+<li><strong>Provide status updates</strong> during maintenance</li>
+<li><strong>Have a tested rollback plan</strong> ready</li>
+<li><strong>Communicate completion</strong> and any residual issues</li>
+</ul>
+<h3 id="api-deprecation-process">API Deprecation Process</h3>
+<p>When deprecating APIs or features, follow a phased approach respecting user needs.</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Timeline</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phase 1: Announce deprecation</strong></td>
+<td>3–6 months before removal</td>
+<td>Deprecation notice in docs; optionally headers in responses; direct notifications to known users; explain alternatives</td>
+</tr>
+<tr>
+<td><strong>Phase 2: Provide migration guidance</strong></td>
+<td>During deprecation</td>
+<td>Examples, migration tooling if possible, dedicated support</td>
+</tr>
+<tr>
+<td><strong>Phase 3: Sunset period</strong></td>
+<td>Final 1–2 months</td>
+<td>Deprecation warnings; track usage; assist remaining users</td>
+</tr>
+<tr>
+<td><strong>Phase 4: Final removal</strong></td>
+<td>After deadline</td>
+<td>Remove only after announced deadline; return clear errors pointing to alternatives; retain explanatory documentation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dependency-updates">Dependency Updates</h3>
+<p>Regular dependency updates are essential for security, stability, and performance.</p>
+<h4 id="update-strategy-by-severity">Update Strategy by Severity</h4>
+<table>
+<thead>
+<tr>
+<th>Update Type</th>
+<th>Timeline</th>
+<th>Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Security patches</strong></td>
+<td>Apply immediately (within 24–48 hours)</td>
+<td>Test quickly; deploy urgently</td>
+</tr>
+<tr>
+<td><strong>Minor updates</strong></td>
+<td>Review and apply monthly</td>
+<td>Batch updates; test normally</td>
+</tr>
+<tr>
+<td><strong>Major updates</strong></td>
+<td>Plan carefully; test thoroughly</td>
+<td>Dedicated effort; extensive testing</td>
+</tr>
+</tbody>
+</table>
+<h4 id="automation-tools">Automation Tools</h4>
+<p>Examples: Dependabot, Renovate, Snyk</p>
+<h4 id="best-practices">Best Practices</h4>
+<ul>
+<li>Enable automated PRs but require review before merging</li>
+<li>Test dependency updates in staging before production</li>
+<li>Group related updates together</li>
+<li>Monitor after deployment for unexpected issues</li>
+<li>Keep dependencies current to avoid large, risky upgrades</li>
+</ul>
+<h3 id="monitoring-technical-debt">Monitoring Technical Debt</h3>
+<p>Technical debt should be managed as part of Continual Service Improvement (CSI) to protect service reliability, maintainability, and delivery velocity. Debt items should be visible, owned, and periodically reviewed.</p>
+<h4 id="what-to-track">What to Track</h4>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Refactoring needs</strong></td>
+<td>Complex modules, duplicated code, architectural drift</td>
+</tr>
+<tr>
+<td><strong>Outdated dependencies</strong></td>
+<td>EOL components, delayed upgrades, known vulnerabilities</td>
+</tr>
+<tr>
+<td><strong>Test coverage gaps</strong></td>
+<td>Missing critical-path tests, flaky tests</td>
+</tr>
+<tr>
+<td><strong>Performance bottlenecks</strong></td>
+<td>Slow queries, scaling constraints</td>
+</tr>
+<tr>
+<td><strong>Documentation/ops gaps</strong></td>
+<td>Missing runbooks, unclear procedures, outdated docs</td>
+</tr>
+</tbody>
+</table>
+<h4 id="prioritization-criteria">Prioritization Criteria</h4>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Guiding Question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Impact</strong></td>
+<td>What degrades or breaks if not fixed?</td>
+</tr>
+<tr>
+<td><strong>Effort</strong></td>
+<td>How long/complex is the fix?</td>
+</tr>
+<tr>
+<td><strong>Risk</strong></td>
+<td>How likely it causes incidents/security issues?</td>
+</tr>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td>Does it block or slow other planned work?</td>
+</tr>
+</tbody>
+</table>
+<h4 id="technical-debt-register">Technical Debt Register</h4>
+<p>Maintain a Technical Debt Register (CSI backlog) and review it regularly in planning.</p>
+<p><strong>Minimum expectations:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Minimum Expectation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Visibility</strong></td>
+<td>Central list in the issue tracker (tag/label: <code>tech-debt</code>)</td>
+</tr>
+<tr>
+<td><strong>Ownership</strong></td>
+<td>Each item has an accountable owner</td>
+</tr>
+<tr>
+<td><strong>Review cadence</strong></td>
+<td>Reviewed each sprint or monthly (team standard)</td>
+</tr>
+<tr>
+<td><strong>Capacity allocation</strong></td>
+<td>Reserve dedicated time (e.g., ~20% of sprint capacity) for debt reduction</td>
+</tr>
+</tbody>
+</table>
+<p>!!! warning "High-Risk Items"
+High-risk items (e.g., security exposures, EOL dependencies, critical runbook gaps) should not be deferred without documented justification and a review date.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

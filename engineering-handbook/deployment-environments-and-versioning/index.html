@@ -1,0 +1,1763 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.echoes-eccch.eu/engineering-handbook/deployment-environments-and-versioning/">
+      
+      
+        <link rel="prev" href="../continuous-monitoring-and-feedback-loops/">
+      
+      
+        <link rel="next" href="../development-processes-and-automation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Deployment, Environments, and Versioning Management - Deliverable D6.2 Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deployment-environments-and-versioning-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Deliverable D6.2 Wiki" class="md-header__button md-logo" aria-label="Deliverable D6.2 Wiki" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Deliverable D6.2 Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deployment, Environments, and Versioning Management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Deliverable D6.2 Wiki" class="md-nav__button md-logo" aria-label="Deliverable D6.2 Wiki" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Deliverable D6.2 Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECHOES D6.2 Tech Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering handbook
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Engineering handbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-versioning-and-open-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Versioning and Open-Source Nature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../continuous-monitoring-and-feedback-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Continuous Monitoring and Feedback Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment, Environments, and Versioning Management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment, Environments, and Versioning Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-pipelines-and-rollback-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Pipelines and Rollback Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Pipelines and Rollback Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-pipeline-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Pipeline Stages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollback Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-as-code-iac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure as Code (IaC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure as Code (IaC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-iac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits of IaC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tooling-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tooling Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tooling Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lightweight-deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lightweight Deployment Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-automation-for-deployment-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Automation for Deployment Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Automation for Deployment Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-deployment-validation-confirms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Deployment Validation Confirms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-validation-test-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Validation Test Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-principles-for-validation-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Principles for Validation Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-versioning-and-immutable-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Versioning and Immutable Artifacts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Versioning and Immutable Artifacts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immutable-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immutable Artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioning-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versioning Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development-processes-and-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Processes and Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation-standards-and-codification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Documentation Standards and Codification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-secrets-and-secure-sdlc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security, Data Protection, and Secrets Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-management-and-interoperability-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Management and Interoperability Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test-automation-and-quality-assurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Automation and Quality Assurance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards catalogue
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards catalogue
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/data-architecture-standards-and-formats-3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data architecture – standards and formats (from D6.2 §3.1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/deployment-and-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and infrastructure (from D6.2 §3.3)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/protocols-and-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols and APIs (from D6.2 §3.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/security-and-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and data privacy (from D6.2 §3.4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../standards-catalogue-old/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards catalogue old
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards catalogue old
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/api-protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols and APIs (D6.2 §3.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/data-standards-and-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data standards and formats (D6.2 §3.1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/deployment-and-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and infrastructure references (D6.2 §3.3)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/metadata-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata standards (D6.2 §3.1.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/rights-and-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rights and licensing metadata (D6.2 §3.5)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/security-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and data privacy (D6.2 §3.4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-pipelines-and-rollback-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Pipelines and Rollback Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Pipelines and Rollback Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-pipeline-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Pipeline Stages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollback Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-as-code-iac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure as Code (IaC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure as Code (IaC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-iac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits of IaC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tooling-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tooling Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tooling Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lightweight-deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lightweight Deployment Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-automation-for-deployment-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Automation for Deployment Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Automation for Deployment Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-deployment-validation-confirms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Deployment Validation Confirms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-validation-test-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Validation Test Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-principles-for-validation-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Principles for Validation Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-versioning-and-immutable-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Versioning and Immutable Artifacts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Versioning and Immutable Artifacts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immutable-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immutable Artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioning-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versioning Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="deployment-environments-and-versioning-management">Deployment, Environments, and Versioning Management</h1>
+<p>In a multi-partner project, deployments must be predictable, repeatable, and easy to troubleshoot. They must also accommodate different infrastructure choices and operational maturity across consortium members. The core principles are consistent across component types: deploy in a controlled way, automate where feasible, and make failures easy to detect and recover from.</p>
+<p>!!! note "Normative Boundary"
+This page is implementation guidance (Living Documentation). It does not create new normative requirements beyond those defined in D6.2 Chapter 8 and validated via Chapters 9–11.</p>
+<h2 id="deployment-pipelines-and-rollback-strategies">Deployment Pipelines and Rollback Strategies</h2>
+<p>Every service/component should be deployed via a pipeline: a repeatable sequence that automates testing, packaging, and deployment.</p>
+<h3 id="typical-pipeline-stages">Typical Pipeline Stages</h3>
+<p>A deployment pipeline typically includes the following stages:</p>
+<ol>
+<li><strong>Run unit and integration tests</strong> to validate code quality</li>
+<li><strong>Package the application</strong> (e.g., container image, binary, Python wheel)</li>
+<li><strong>Tag the release</strong> using Semantic Versioning</li>
+<li><strong>Deploy to staging/test environment</strong> for validation</li>
+<li><strong>Promote to production</strong> via manual or automated approval</li>
+</ol>
+<h3 id="rollback-principles">Rollback Principles</h3>
+<p>Rollback should be fast and safe. Key principles include:</p>
+<ul>
+<li><strong>Deployments should be atomic and reversible</strong> to minimize risk</li>
+<li><strong>Previous versions remain available</strong> (keep at least the last 2–3 versions)</li>
+<li><strong>Rollback procedures are tested periodically</strong> to ensure they work when needed</li>
+<li><strong>Post-deploy monitoring and escalation paths are defined</strong> for quick issue detection</li>
+</ul>
+<p>!!! tip "Immutable Artifacts"
+Immutable artifacts (e.g., versioned container images) reduce "it works on my machine" drift and simplify rollback procedures.</p>
+<h3 id="deployment-strategies">Deployment Strategies</h3>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Description</th>
+<th>Typical Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rolling update</strong></td>
+<td>Gradually replace old instances with new ones</td>
+<td>Standard deployments with minimal downtime</td>
+</tr>
+<tr>
+<td><strong>Blue-green</strong></td>
+<td>Two identical environments; switch traffic instantly</td>
+<td>Near zero-downtime, simple rollback</td>
+</tr>
+<tr>
+<td><strong>Canary</strong></td>
+<td>Deploy to a small subset of traffic/users first</td>
+<td>Risk mitigation for critical services</td>
+</tr>
+<tr>
+<td><strong>Recreate</strong></td>
+<td>Stop old version, start new version</td>
+<td>Simpler deployments where downtime is acceptable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="infrastructure-as-code-iac">Infrastructure as Code (IaC)</h2>
+<p>Managing infrastructure manually is risky and hard to audit. Prefer Infrastructure as Code (IaC) so that environments are reproducible, reviewable, versioned, and shareable across teams.</p>
+<h3 id="benefits-of-iac">Benefits of IaC</h3>
+<ul>
+<li><strong>Consistent environments</strong> across test, staging, and production</li>
+<li><strong>Auditable change history</strong> with version control integration</li>
+<li><strong>Fast rebuild</strong> in case of failure or disaster recovery</li>
+<li><strong>Portable blueprints</strong> across providers (cloud/on-premises)</li>
+</ul>
+<h3 id="tooling-overview">Tooling Overview</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Focus</th>
+<th>Language</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Terraform</strong></td>
+<td>Infrastructure provisioning</td>
+<td>HCL</td>
+<td>Cloud resources (VMs, networks, storage)</td>
+</tr>
+<tr>
+<td><strong>Ansible</strong></td>
+<td>Configuration management</td>
+<td>YAML</td>
+<td>Installing software, managing configurations</td>
+</tr>
+</tbody>
+</table>
+<h4 id="lightweight-deployment-options">Lightweight Deployment Options</h4>
+<p>Even lightweight deployments benefit from codification:</p>
+<ul>
+<li><strong>Docker Compose</strong> for small, single-host deployments</li>
+<li><strong>Kubernetes manifests/Helm</strong> for orchestrated services</li>
+</ul>
+<h2 id="test-automation-for-deployment-validation">Test Automation for Deployment Validation</h2>
+<p>Before a release is promoted to production, it should pass automated deployment validation tests that confirm it works in a production-like environment with real dependencies and configuration.</p>
+<h3 id="what-deployment-validation-confirms">What Deployment Validation Confirms</h3>
+<table>
+<thead>
+<tr>
+<th>Validation Question</th>
+<th>Examples of Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can the service start in the target environment?</td>
+<td>Successful startup; readiness probe passes</td>
+</tr>
+<tr>
+<td>Is configuration complete and correct?</td>
+<td>Required env vars/secrets present; config schema checks</td>
+</tr>
+<tr>
+<td>Can the service connect to dependencies?</td>
+<td>DB/queue/cache connectivity checks; timeouts within limits</td>
+</tr>
+<tr>
+<td>Does authn/authz work end-to-end?</td>
+<td>Token validation against real IdP; role-based access checks</td>
+</tr>
+<tr>
+<td>Does it respond correctly to real requests?</td>
+<td>Key endpoints return expected status codes and payload shapes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-validation-test-types">Recommended Validation Test Types</h3>
+<table>
+<thead>
+<tr>
+<th>Test Type</th>
+<th>Purpose</th>
+<th>Typical Examples</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Health checks</strong></td>
+<td>Confirm service is running and responsive</td>
+<td>Liveness/readiness endpoints; basic HTTP 200</td>
+<td>Keep lightweight; avoid external dependencies</td>
+</tr>
+<tr>
+<td><strong>Smoke tests</strong></td>
+<td>Verify essential workflows quickly</td>
+<td>Minimal CRUD path; search returns results; auth validates tokens</td>
+<td>Breadth over depth; use controlled test data</td>
+</tr>
+<tr>
+<td><strong>Dependency integration checks</strong></td>
+<td>Confirm connectivity/compatibility</td>
+<td>DB migrations; queue publish/consume; external API reachability</td>
+<td>Catches network/config issues mocks miss</td>
+</tr>
+<tr>
+<td><strong>Security &amp; compliance checks</strong></td>
+<td>Ensure controls apply in deployed environment</td>
+<td>HTTPS enforced; auth required; security headers; audit logging</td>
+<td>Focused on deployment-relevant controls</td>
+</tr>
+</tbody>
+</table>
+<h3 id="design-principles-for-validation-tests">Design Principles for Validation Tests</h3>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Guideline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Speed</strong></td>
+<td>Complete in minutes to avoid blocking delivery</td>
+</tr>
+<tr>
+<td><strong>Reliability</strong></td>
+<td>Deterministic; flaky tests fixed or quarantined</td>
+</tr>
+<tr>
+<td><strong>Clear failures</strong></td>
+<td>Errors identify failing check, endpoint, and relevant dependency/config</td>
+</tr>
+<tr>
+<td><strong>Automation and gating</strong></td>
+<td>Run automatically in pipeline; failures block promotion</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pipeline-integration">Pipeline Integration</h3>
+<p>Deployment validation should be integrated into your CI/CD pipeline with the following practices:</p>
+<ul>
+<li><strong>Run automatically</strong> after deployment to test/staging environments</li>
+<li><strong>Act as a promotion gate</strong> to prevent faulty releases from reaching production</li>
+<li><strong>Retain results</strong> as CI artifacts/dashboards for historical tracking</li>
+<li><strong>Notify on failures</strong> with links to logs, test reports, and deployed version metadata</li>
+</ul>
+<h2 id="semantic-versioning-and-immutable-artifacts">Semantic Versioning and Immutable Artifacts</h2>
+<p>All deployable components should follow Semantic Versioning (SemVer) to make compatibility expectations explicit (e.g., <code>v2.1.0</code> indicates major/minor/patch semantics).</p>
+<h3 id="immutable-artifacts">Immutable Artifacts</h3>
+<p>Released artifacts should be <strong>immutable</strong>:</p>
+<ul>
+<li>Once built and tagged, they must not change</li>
+<li>If a rebuild is required, publish a new version tag</li>
+<li>Never modify existing releases in place</li>
+</ul>
+<h3 id="versioning-best-practices">Versioning Best Practices</h3>
+<ul>
+<li><strong>Tag releases in Git</strong> (e.g., <code>git tag v2.1.0</code>) for traceability</li>
+<li><strong>Expose version information</strong> via <code>/version</code> endpoint or <code>version.txt</code> file</li>
+<li><strong>Keep the same version</strong> across all artifacts (image, docs, API spec)</li>
+<li><strong>Generate changelogs</strong> from commit metadata (e.g., Conventional Commits + changelog tooling)</li>
+<li><strong>Never delete or overwrite</strong> published artifacts</li>
+</ul>
+<p>!!! tip "Version Consistency"
+Maintaining consistent version numbers across all artifacts (container images, documentation, API specifications) makes debugging and traceability much easier.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2278 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.echoes-eccch.eu/engineering-handbook/service-management-and-interoperability-standards/">
+      
+      
+        <link rel="prev" href="../security-secrets-and-secure-sdlc/">
+      
+      
+        <link rel="next" href="../test-automation-and-quality-assurance/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Service Management and Interoperability Standards - Deliverable D6.2 Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#service-management-and-interoperability-standards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Deliverable D6.2 Wiki" class="md-header__button md-logo" aria-label="Deliverable D6.2 Wiki" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Deliverable D6.2 Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Service Management and Interoperability Standards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Deliverable D6.2 Wiki" class="md-nav__button md-logo" aria-label="Deliverable D6.2 Wiki" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Deliverable D6.2 Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECHOES D6.2 Tech Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering handbook
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Engineering handbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-versioning-and-open-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Versioning and Open-Source Nature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../continuous-monitoring-and-feedback-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Continuous Monitoring and Feedback Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-environments-and-versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment, Environments, and Versioning Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development-processes-and-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Processes and Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation-standards-and-codification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Documentation Standards and Codification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-secrets-and-secure-sdlc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security, Data Protection, and Secrets Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Management and Interoperability Standards
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Management and Interoperability Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adopting-service-management-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adopting Service Management Frameworks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adopting Service Management Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-service-management-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Service Management Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fitsm-for-research-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FitSM for Research Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-to-echoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application to ECHOES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-documentation-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Documentation Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-dependencies-and-apis-for-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Dependencies and APIs for Interoperability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Dependencies and APIs for Interoperability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-management-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Management Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Management Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-pinning-and-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Pinning and Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graceful-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graceful Degradation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-breakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Circuit Breakers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeouts-and-retries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeouts and Retries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Dependencies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alerting-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alerting Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fallback-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fallback Plans
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-driven-architecture-and-standardized-messaging-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-Driven Architecture and Standardized Messaging Protocols
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event-Driven Architecture and Standardized Messaging Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-event-driven-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits of Event-Driven Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messaging-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Messaging Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Messaging Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publishsubscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publish–Subscribe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Queues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-sourcing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Sourcing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-schema-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Schema Standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Schema Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields-for-all-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Fields for All Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-event-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Event Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-driven-architecture-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-Driven Architecture Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event-Driven Architecture Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-design-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Design Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test-automation-and-quality-assurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Automation and Quality Assurance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards catalogue
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards catalogue
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/data-architecture-standards-and-formats-3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data architecture – standards and formats (from D6.2 §3.1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/deployment-and-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and infrastructure (from D6.2 §3.3)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/protocols-and-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols and APIs (from D6.2 §3.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue/security-and-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and data privacy (from D6.2 §3.4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../standards-catalogue-old/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards catalogue old
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards catalogue old
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/api-protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols and APIs (D6.2 §3.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/data-standards-and-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data standards and formats (D6.2 §3.1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/deployment-and-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and infrastructure references (D6.2 §3.3)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/metadata-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata standards (D6.2 §3.1.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/rights-and-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rights and licensing metadata (D6.2 §3.5)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/security-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and data privacy (D6.2 §3.4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adopting-service-management-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adopting Service Management Frameworks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adopting Service Management Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-service-management-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Service Management Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fitsm-for-research-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FitSM for Research Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-to-echoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application to ECHOES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-documentation-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Documentation Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-dependencies-and-apis-for-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Dependencies and APIs for Interoperability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Dependencies and APIs for Interoperability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-management-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Management Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Management Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-pinning-and-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Pinning and Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graceful-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graceful Degradation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-breakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Circuit Breakers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeouts-and-retries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeouts and Retries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Dependencies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alerting-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alerting Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fallback-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fallback Plans
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-driven-architecture-and-standardized-messaging-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-Driven Architecture and Standardized Messaging Protocols
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event-Driven Architecture and Standardized Messaging Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-event-driven-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits of Event-Driven Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messaging-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Messaging Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Messaging Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publishsubscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publish–Subscribe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Queues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-sourcing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Sourcing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-schema-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Schema Standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Schema Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields-for-all-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Fields for All Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-event-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Event Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-driven-architecture-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-Driven Architecture Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event-Driven Architecture Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-design-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Design Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="service-management-and-interoperability-standards">Service Management and Interoperability Standards</h1>
+<p>Beyond writing code, ECHOES components must be managed as services that are maintained, monitored, and evolved over time. This page provides practical guidance on adopting lightweight service management frameworks, managing dependencies and APIs for reliability and interoperability, and using event-driven architecture and standardized messaging patterns for loosely coupled workflows.</p>
+<hr />
+<h2 id="adopting-service-management-frameworks">Adopting Service Management Frameworks</h2>
+<p>Service management frameworks provide structured approaches to delivering and maintaining IT services. For research projects, full ITIL adoption may be unnecessarily heavyweight. Lightweight alternatives such as <strong>FitSM</strong> (tailored for research and education environments) can provide practical structure with lower overhead.</p>
+<h3 id="core-service-management-principles">Core Service Management Principles</h3>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>What It Means in Practice</th>
+<th>Typical Outputs / Artifacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Service catalog</strong></td>
+<td>Maintain an inventory of available services and their purpose</td>
+<td>Service catalog page; service owners; service boundaries</td>
+</tr>
+<tr>
+<td><strong>Service level objectives (SLOs)</strong></td>
+<td>Define expected availability and performance targets</td>
+<td>SLO definitions; monitoring dashboards; alert thresholds</td>
+</tr>
+<tr>
+<td><strong>Change management</strong></td>
+<td>Control and document how changes are introduced to reduce disruption</td>
+<td>Change log; approval rules; release notes; rollback plan</td>
+</tr>
+<tr>
+<td><strong>Incident management</strong></td>
+<td>Handle incidents consistently and traceably</td>
+<td>Incident process; escalation paths; post-incident reviews</td>
+</tr>
+<tr>
+<td><strong>Continuous improvement</strong></td>
+<td>Regularly review service quality and implement improvements</td>
+<td>Improvement backlog; retrospectives; user feedback loop</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fitsm-for-research-projects">FitSM for Research Projects</h3>
+<p>FitSM is a lightweight service management standard designed specifically for research and education IT services. It provides a practical structure across the service lifecycle:</p>
+<table>
+<thead>
+<tr>
+<th>FitSM Area</th>
+<th>Purpose</th>
+<th>Example Evidence (Lightweight)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Service planning</strong></td>
+<td>Define what services will be delivered</td>
+<td>Service roadmap; scope statement; resourcing assumptions</td>
+</tr>
+<tr>
+<td><strong>Service design</strong></td>
+<td>Design services to meet requirements</td>
+<td>Architecture notes; security considerations; SLO draft</td>
+</tr>
+<tr>
+<td><strong>Service delivery</strong></td>
+<td>Operate and maintain services</td>
+<td>Runbooks; deployment procedures; on-call/support rotation</td>
+</tr>
+<tr>
+<td><strong>Service assurance</strong></td>
+<td>Monitor and improve service quality</td>
+<td>Monitoring/alerts; incident metrics; periodic review notes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="application-to-echoes">Application to ECHOES</h3>
+<table>
+<thead>
+<tr>
+<th>Practice</th>
+<th>What to Do</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Document service descriptions and responsibilities</strong></td>
+<td>Assign service owner(s); define service boundaries; publish a short description</td>
+<td>Clear accountability; easier onboarding and support</td>
+</tr>
+<tr>
+<td><strong>Define support procedures</strong></td>
+<td>Provide intake channels, triage rules, escalation, response expectations</td>
+<td>Predictable user experience; faster resolution</td>
+</tr>
+<tr>
+<td><strong>Establish monitoring and reporting</strong></td>
+<td>Define basic metrics and alerting; periodic status reporting</td>
+<td>Improved reliability; earlier detection of issues</td>
+</tr>
+<tr>
+<td><strong>Create improvement cycles based on user feedback</strong></td>
+<td>Capture feedback; maintain improvement backlog; review periodically</td>
+<td>Continuous service maturity; better alignment with users</td>
+</tr>
+</tbody>
+</table>
+<h3 id="minimum-documentation-requirements">Minimum Documentation Requirements</h3>
+<p>Each service should have a minimum documentation set to ensure operability and supportability:</p>
+<table>
+<thead>
+<tr>
+<th>Document Element</th>
+<th>Required Content</th>
+<th>Notes / Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Service description</strong></td>
+<td>What it does; who it is for; key features; service owner</td>
+<td>Keep to 0.5–1 page; link to user docs</td>
+</tr>
+<tr>
+<td><strong>Operational procedures</strong></td>
+<td>How to deploy, update, restart, scale; dependencies</td>
+<td>Include step-by-step runbook and rollback</td>
+</tr>
+<tr>
+<td><strong>Support contacts</strong></td>
+<td>Who to contact; hours; escalation path</td>
+<td>Include on-call rotation if applicable</td>
+</tr>
+<tr>
+<td><strong>SLOs/SLAs</strong></td>
+<td>Availability target; performance targets; support response targets</td>
+<td>Prefer SLOs; SLAs only if contractually needed</td>
+</tr>
+<tr>
+<td><strong>Known issues and workarounds</strong></td>
+<td>Current limitations; mitigations; planned fixes</td>
+<td>Keep current; link to issue tracker</td>
+</tr>
+<tr>
+<td><strong>Maintenance windows</strong></td>
+<td>When updates occur; expected impact; notification approach</td>
+<td>Define communication template and lead time</td>
+</tr>
+</tbody>
+</table>
+<p>!!! tip "Keep It Lightweight"
+Documentation should be sufficient for operation and handoff, but avoid creating bureaucracy. A well-maintained README, runbook, and service catalog entry are often sufficient for research projects.</p>
+<hr />
+<h2 id="managing-dependencies-and-apis-for-interoperability">Managing Dependencies and APIs for Interoperability</h2>
+<p>Cultural heritage cloud services rarely operate in isolation. They depend on external APIs, databases, authentication services, and other components. Managing these dependencies carefully is essential for reliability and interoperability.</p>
+<h3 id="dependency-management-strategies">Dependency Management Strategies</h3>
+<h4 id="version-pinning-and-compatibility">Version Pinning and Compatibility</h4>
+<p>Dependencies should be managed with explicit version constraints to ensure predictable behavior across environments.</p>
+<p><strong>Key practices:</strong></p>
+<ul>
+<li>Specify exact or minimum versions for all dependencies</li>
+<li>Use lock files to freeze the entire dependency tree</li>
+<li>Test compatibility in non-production environments before upgrading</li>
+<li>Document and communicate breaking changes clearly</li>
+</ul>
+<p>!!! info "Why It Matters"
+Version pinning prevents unexpected breakages when libraries update and ensures all environments use identical versions.</p>
+<h4 id="graceful-degradation">Graceful Degradation</h4>
+<p>Services should remain partially functional when dependencies become unavailable rather than failing completely.</p>
+<p><strong>Implementation approach:</strong></p>
+<ul>
+<li>Provide meaningful error messages explaining what is affected and why</li>
+<li>Offer degraded functionality where possible (cached data, static content)</li>
+<li>Log all dependency failures for investigation</li>
+<li>Design to prevent cascading failures</li>
+</ul>
+<p>!!! info "Why It Matters"
+One service's failure should not bring down the entire system; users get partial functionality instead of total outage.</p>
+<h4 id="circuit-breakers">Circuit Breakers</h4>
+<p>Circuit breakers prevent repeated calls to failing services, protecting both the caller and the failing dependency.</p>
+<p><strong>How they work:</strong></p>
+<ul>
+<li><strong>Closed state</strong>: Normal operation, requests pass through</li>
+<li><strong>Open state</strong>: After repeated failures, immediately return errors without attempting calls</li>
+<li><strong>Half-open state</strong>: After timeout, allow test requests to check if service recovered; return to closed if successful, reopen if it fails</li>
+</ul>
+<p>!!! info "Why It Matters"
+Prevents wasted resources on calls that will fail and gives failing services time to recover.</p>
+<h4 id="timeouts-and-retries">Timeouts and Retries</h4>
+<p>Every external call needs timeout and retry policies to handle both transient and permanent failures.</p>
+<p><strong>Configuration principles:</strong></p>
+<ul>
+<li>Set timeouts based on expected response times plus network margin</li>
+<li>Implement retry with exponential backoff for transient failures</li>
+<li>Do not retry permanent errors (authentication failures, invalid requests)</li>
+<li>Limit retry attempts and add jitter to prevent synchronized retry storms</li>
+</ul>
+<p>!!! info "Why It Matters"
+Prevents requests from hanging indefinitely while handling temporary network issues appropriately.</p>
+<h3 id="monitoring-dependencies">Monitoring Dependencies</h3>
+<p>Track dependency health proactively to catch problems early.</p>
+<h4 id="what-to-monitor">What to Monitor</h4>
+<ul>
+<li><strong>Response times</strong> — Increasing times signal problems before failures</li>
+<li><strong>Error rates</strong> — Rising errors indicate degraded service quality</li>
+<li><strong>Availability patterns</strong> — Identify recurring issues</li>
+</ul>
+<h4 id="alerting-strategy">Alerting Strategy</h4>
+<ul>
+<li>Set thresholds based on error rates and response time percentiles</li>
+<li>Provide context: which dependency, severity, affected services</li>
+<li>Escalate critical dependencies faster than optional ones</li>
+</ul>
+<h4 id="dependency-mapping">Dependency Mapping</h4>
+<ul>
+<li>Document which services depend on which others</li>
+<li>Identify critical paths where failures have cascading impact</li>
+<li>Use maps to prioritize reliability improvements</li>
+</ul>
+<h4 id="fallback-plans">Fallback Plans</h4>
+<ul>
+<li>Document alternatives for critical dependencies</li>
+<li>Options: backup services, cached data, degraded functionality</li>
+<li>Test fallback procedures regularly to ensure they work when needed</li>
+</ul>
+<hr />
+<h2 id="event-driven-architecture-and-standardized-messaging-protocols">Event-Driven Architecture and Standardized Messaging Protocols</h2>
+<p>For complex workflows and loosely coupled systems, event-driven architecture provides flexibility and scalability. Instead of services calling each other directly, they emit and respond to events.</p>
+<h3 id="benefits-of-event-driven-architecture">Benefits of Event-Driven Architecture</h3>
+<table>
+<thead>
+<tr>
+<th>Benefit</th>
+<th>Description</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Loose coupling</strong></td>
+<td>Services do not need to know about each other's existence or location</td>
+<td>Easier to add, remove, or modify services independently</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Events processed asynchronously, allowing independent scaling</td>
+<td>Handle traffic spikes by adding more event consumers</td>
+</tr>
+<tr>
+<td><strong>Resilience</strong></td>
+<td>Temporary failures do not block the entire workflow</td>
+<td>System continues operating even when individual services fail</td>
+</tr>
+<tr>
+<td><strong>Auditability</strong></td>
+<td>Event logs provide complete history of all changes</td>
+<td>Full traceability for compliance and debugging</td>
+</tr>
+</tbody>
+</table>
+<h3 id="messaging-patterns">Messaging Patterns</h3>
+<h4 id="publishsubscribe">Publish–Subscribe</h4>
+<p>Services publish events to topics; interested services subscribe.</p>
+<p><img alt="Publish-subscribe pattern" src="../../internal-assets/pub-sub.svg" /></p>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Multiple services need to react to the same event</li>
+<li>Services should remain unaware of each other</li>
+<li>New subscribers can be added without modifying publishers</li>
+</ul>
+<p><strong>Example scenario:</strong> When a cultural heritage object is updated, the indexing service updates the search index, the notification service alerts curators, and the analytics service records the change—without the metadata service needing to know about these consumers.</p>
+<h4 id="message-queues">Message Queues</h4>
+<p>Work items are placed in queues and processed by workers.</p>
+<p><img alt="Message queue pattern" src="../../internal-assets/msg-que.svg" /></p>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Tasks need guaranteed processing (at-least-once delivery)</li>
+<li>Work should be distributed across multiple workers</li>
+<li>Processing can be asynchronous (not real-time)</li>
+</ul>
+<p><strong>Example scenario:</strong> Digitization pipeline where image processing tasks are queued and distributed across multiple worker nodes for parallel processing.</p>
+<h4 id="event-sourcing">Event Sourcing</h4>
+<p>All changes are stored as a sequence of events rather than just current state, providing complete audit trail and ability to reconstruct state at any point in time.</p>
+<p><strong>Example event store:</strong></p>
+<ul>
+<li>Event 1: Object created: <code>obj-12345</code></li>
+<li>Event 2: Title updated: <code>"Medieval Manuscript"</code></li>
+<li>Event 3: Metadata enriched: added date field</li>
+<li>Event 4: Access rights changed: public → restricted</li>
+<li>Event 5: Annotation added by curator</li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Complete audit history is required</li>
+<li>Need to reconstruct past states</li>
+<li>Temporal queries ("what did this object look like in 2023?")</li>
+<li>Compliance and provenance tracking</li>
+</ul>
+<p>!!! info "Why It Matters for Cultural Heritage"
+Tracking the complete history of object metadata changes is often essential for scholarly research and institutional accountability.</p>
+<h3 id="recommended-technologies">Recommended Technologies</h3>
+<table>
+<thead>
+<tr>
+<th>Technology</th>
+<th>Use Case</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RabbitMQ</strong></td>
+<td>General message queuing</td>
+<td>AMQP</td>
+</tr>
+<tr>
+<td><strong>Apache Kafka</strong></td>
+<td>High-throughput event streaming</td>
+<td>Kafka protocol</td>
+</tr>
+<tr>
+<td><strong>Redis Pub/Sub</strong></td>
+<td>Lightweight messaging</td>
+<td>Redis protocol</td>
+</tr>
+<tr>
+<td><strong>MQTT</strong></td>
+<td>IoT and lightweight messaging</td>
+<td>MQTT</td>
+</tr>
+</tbody>
+</table>
+<h3 id="event-schema-standards">Event Schema Standards</h3>
+<p>Define clear, consistent schemas for all events to ensure interoperability.</p>
+<h4 id="required-fields-for-all-events">Required Fields for All Events</h4>
+<ul>
+<li><strong><code>event_id</code></strong>: Unique identifier for this event</li>
+<li><strong><code>event_type</code></strong>: Categorized event name (e.g., <code>object.created</code>, <code>metadata.updated</code>)</li>
+<li><strong><code>timestamp</code></strong>: When the event occurred (ISO 8601 format)</li>
+<li><strong><code>source</code></strong>: Which service generated the event</li>
+<li><strong><code>data</code></strong>: Event-specific payload</li>
+</ul>
+<h4 id="example-event-structure">Example Event Structure</h4>
+<pre><code class="language-json">{
+  &quot;event_id&quot;: &quot;evt-abc123&quot;,
+  &quot;event_type&quot;: &quot;object.created&quot;,
+  &quot;timestamp&quot;: &quot;2024-01-15T14:30:00Z&quot;,
+  &quot;source&quot;: &quot;metadata-service&quot;,
+  &quot;data&quot;: {
+    &quot;object_id&quot;: &quot;obj-12345&quot;,
+    &quot;collection&quot;: &quot;medieval-manuscripts&quot;,
+    &quot;metadata_url&quot;: &quot;https://api.echoes.eu/objects/obj-12345&quot;
+  }
+}
+</code></pre>
+<h3 id="event-driven-architecture-best-practices">Event-Driven Architecture Best Practices</h3>
+<h4 id="schema-governance">Schema Governance</h4>
+<ul>
+<li><strong>Document all event types in a shared registry</strong> to maintain consistency across services</li>
+<li><strong>Version event schemas when making breaking changes</strong> to prevent consumer disruption</li>
+<li><strong>Use semantic event names</strong> following the <code>verb.noun</code> pattern (e.g., <code>object.created</code>, <code>metadata.updated</code>)</li>
+<li><strong>Include correlation IDs</strong> to trace related events across services and enable end-to-end request tracking</li>
+</ul>
+<h4 id="event-design-best-practices">Event Design Best Practices</h4>
+<ul>
+<li><strong>Keep events small and focused</strong> following the single responsibility principle</li>
+<li><strong>Include sufficient information</strong> for consumers to act without requiring additional queries to other services</li>
+<li><strong>Avoid including sensitive data</strong> in events that are broadcast to multiple subscribers</li>
+<li><strong>Use standard timestamp formats</strong> (ISO 8601) and timezone (UTC) for consistency</li>
+</ul>
+<h4 id="implementation-considerations">Implementation Considerations</h4>
+<p><strong>Ordering and Idempotency</strong></p>
+<p>Events may arrive out of order or be delivered multiple times in distributed systems. To handle this:</p>
+<ul>
+<li><strong>Design consumers to be idempotent</strong> so that processing the same event twice produces the same result</li>
+<li><strong>Use sequence numbers or timestamps</strong> when event order is critical to business logic</li>
+</ul>
+<p><strong>Error Handling</strong></p>
+<p>Implement robust error handling to ensure reliability:</p>
+<ul>
+<li><strong>Ensure failed event processing does not lose messages</strong> through proper retry mechanisms</li>
+<li><strong>Implement dead-letter queues</strong> for events that repeatedly fail processing after exhausting retries</li>
+<li><strong>Log processing failures with sufficient context</strong> including event details, error messages, and stack traces for effective debugging</li>
+</ul>
+<p><strong>Monitoring</strong></p>
+<p>Establish comprehensive monitoring to maintain system health:</p>
+<ul>
+<li><strong>Track event publication rates and consumption lag</strong> to identify performance issues</li>
+<li><strong>Alert on growing backlogs</strong> when consumers are falling behind producers</li>
+<li><strong>Monitor dead-letter queues</strong> for systematic processing failures that may indicate code bugs or infrastructure problems</li>
+</ul>
+<p>!!! tip "Start Simple"
+Begin with basic pub-sub patterns before implementing complex event sourcing. Event-driven architecture can be adopted incrementally as your needs grow.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2028 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.echoes-eccch.eu/standards-catalogue/security-and-data-privacy/">
+      
+      
+        <link rel="prev" href="../protocols-and-apis/">
+      
+      
+        <link rel="next" href="../../standards-catalogue-old/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Security and data privacy (from D6.2 §3.4) - Deliverable D6.2 Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#security-and-data-privacy-from-d62-34" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Deliverable D6.2 Wiki" class="md-header__button md-logo" aria-label="Deliverable D6.2 Wiki" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Deliverable D6.2 Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Security and data privacy (from D6.2 §3.4)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Deliverable D6.2 Wiki" class="md-nav__button md-logo" aria-label="Deliverable D6.2 Wiki" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Deliverable D6.2 Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECHOES D6.2 Tech Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering handbook
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Engineering handbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering-handbook/code-versioning-and-open-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Versioning and Open-Source Nature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering-handbook/continuous-monitoring-and-feedback-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Continuous Monitoring and Feedback Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering-handbook/deployment-environments-and-versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment, Environments, and Versioning Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering-handbook/development-processes-and-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Processes and Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering-handbook/documentation-standards-and-codification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Documentation Standards and Codification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering-handbook/security-secrets-and-secure-sdlc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security, Data Protection, and Secrets Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering-handbook/service-management-and-interoperability-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Management and Interoperability Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering-handbook/test-automation-and-quality-assurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Automation and Quality Assurance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards catalogue
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards catalogue
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-architecture-standards-and-formats-3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data architecture – standards and formats (from D6.2 §3.1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-and-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and infrastructure (from D6.2 §3.3)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protocols-and-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols and APIs (from D6.2 §3.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and data privacy (from D6.2 §3.4)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and data privacy (from D6.2 §3.4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#341-authentication-infrastructure-aai-egi-check-in-as-identity-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1 Authentication infrastructure (AAI): EGI Check-in as Identity Provider
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.1 Authentication infrastructure (AAI): EGI Check-in as Identity Provider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capabilities-relevant-for-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capabilities relevant for interoperability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-identity-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required identity semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported protocols
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-authentication-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported authentication flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-lifetimes-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token lifetimes (defaults)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-token-validation-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required token validation behaviour
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#342-authorisation-models-rbacabac-and-policy-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2 Authorisation models (RBAC/ABAC and policy enforcement)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.2 Authorisation models (RBAC/ABAC and policy enforcement)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-and-group-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role and group model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-authorisation-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required authorisation behaviour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rbac-and-abac-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC and ABAC support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-to-machine-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Machine-to-machine authorisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#343-api-security-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.3 API security standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.3 API security standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transport-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transport security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-authorisation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API authorisation patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-security-headers-configurable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard security headers (configurable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#344-data-privacy-and-protection-gdpr-supporting-technical-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.4 Data privacy and protection (GDPR-supporting technical practices)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.4 Data privacy and protection (GDPR-supporting technical practices)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-minimisation-and-redaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data minimisation and redaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudonymisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudonymisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-and-auditability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging and auditability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provenance-for-privacy-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provenance for privacy decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#345-rights-management-and-technical-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.5 Rights management and technical enforcement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#346-security-in-deployment-and-infrastructure-links-to-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.6 Security in deployment and infrastructure (links to §3.3)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.6 Security in deployment and infrastructure (links to §3.3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-and-runtime-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container and runtime security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secret management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-and-incident-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring and incident response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#347-security-expectations-by-interoperability-level-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.7 Security expectations by interoperability level (overview)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../standards-catalogue-old/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards catalogue old
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards catalogue old
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/api-protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols and APIs (D6.2 §3.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/data-standards-and-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data standards and formats (D6.2 §3.1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/deployment-and-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and infrastructure references (D6.2 §3.3)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/metadata-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata standards (D6.2 §3.1.2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/rights-and-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rights and licensing metadata (D6.2 §3.5)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards-catalogue-old/security-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and data privacy (D6.2 §3.4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#341-authentication-infrastructure-aai-egi-check-in-as-identity-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1 Authentication infrastructure (AAI): EGI Check-in as Identity Provider
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.1 Authentication infrastructure (AAI): EGI Check-in as Identity Provider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capabilities-relevant-for-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capabilities relevant for interoperability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-identity-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required identity semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported protocols
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-authentication-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported authentication flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-lifetimes-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token lifetimes (defaults)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-token-validation-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required token validation behaviour
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#342-authorisation-models-rbacabac-and-policy-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2 Authorisation models (RBAC/ABAC and policy enforcement)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.2 Authorisation models (RBAC/ABAC and policy enforcement)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-and-group-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role and group model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-authorisation-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required authorisation behaviour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rbac-and-abac-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC and ABAC support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-to-machine-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Machine-to-machine authorisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#343-api-security-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.3 API security standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.3 API security standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transport-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transport security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-authorisation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API authorisation patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-security-headers-configurable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard security headers (configurable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#344-data-privacy-and-protection-gdpr-supporting-technical-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.4 Data privacy and protection (GDPR-supporting technical practices)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.4 Data privacy and protection (GDPR-supporting technical practices)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-minimisation-and-redaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data minimisation and redaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudonymisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudonymisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-and-auditability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging and auditability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provenance-for-privacy-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provenance for privacy decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#345-rights-management-and-technical-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.5 Rights management and technical enforcement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#346-security-in-deployment-and-infrastructure-links-to-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.6 Security in deployment and infrastructure (links to §3.3)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.6 Security in deployment and infrastructure (links to §3.3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-and-runtime-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container and runtime security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secret management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-and-incident-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring and incident response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#347-security-expectations-by-interoperability-level-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.7 Security expectations by interoperability level (overview)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="security-and-data-privacy-from-d62-34">Security and data privacy (from D6.2 §3.4)</h1>
+<p>Security and data privacy are foundational to interoperability within the Cultural Heritage Cloud (CH Cloud). Distributed services, applications, data pipelines, and catalogues can only interoperate reliably when they share a common trust framework, including:
+- unified identity and authentication mechanisms,
+- consistent authorisation rules,
+- secure transport and storage practices,
+- machine-actionable rights and access restrictions,
+- reproducible deployment security practices,
+- verifiable audit and provenance metadata.</p>
+<p>!!! note "Normative boundary"
+The official deliverable (PDF) defines the authoritative requirements and compliance rules.<br />
+This page provides maintained implementation guidance and reference material for consistent implementation across partners and environments.
+Legal and organisational aspects are handled in D6.1.</p>
+<h2 id="341-authentication-infrastructure-aai-egi-check-in-as-identity-provider">3.4.1 Authentication infrastructure (AAI): EGI Check-in as Identity Provider</h2>
+<p><strong>Baseline expectation:</strong> services requiring authentication integrate with <strong>EGI Check-in</strong> to ensure unified login experience and consistent identity semantics across the infrastructure.</p>
+<h3 id="capabilities-relevant-for-interoperability">Capabilities relevant for interoperability</h3>
+<ul>
+<li><strong>OIDC</strong>: standard authentication for web and API clients</li>
+<li><strong>OAuth 2.0</strong>: token-based authorisation for services and automation</li>
+<li><strong>SAML 2.0</strong>: integration with eduGAIN and institutional IdPs (where required)</li>
+<li><strong>JWT access tokens</strong>: self-contained tokens enabling local verification</li>
+<li><strong>Account linking</strong>: supports multiple IdPs under one stable identity</li>
+<li><strong>Group/role attributes</strong>: enables downstream policy enforcement</li>
+</ul>
+<h3 id="required-identity-semantics">Required identity semantics</h3>
+<ul>
+<li>each user is represented by a <strong>persistent unique subject identifier (<code>sub</code>)</strong></li>
+<li>linked identities are merged under a <strong>single stable identity</strong></li>
+</ul>
+<p><strong>Implementation guidance:</strong>
+- avoid creating local user identities that conflict with Check-in’s global subject identifiers
+- use the stable identity for access control, provenance metadata, audit trails, and membership history</p>
+<h3 id="supported-protocols">Supported protocols</h3>
+<ul>
+<li><strong>OpenID Connect (OIDC)</strong>: recommended for web and API services</li>
+<li><strong>OAuth2</strong>: service-to-service and delegated authorisation</li>
+<li><strong>SAML2</strong>: backward compatibility where required</li>
+</ul>
+<h3 id="supported-authentication-flows">Supported authentication flows</h3>
+<p>Services should support one or more flows as appropriate:
+- <strong>Authorization Code Flow</strong>: interactive web portals and browser clients
+- <strong>Client Credentials Flow</strong>: background jobs and microservices (service-to-service)
+- <strong>Device Authorization Flow</strong>: CLI tools and limited UI devices
+- <strong>Refresh Token Flow</strong>: session renewal for long-running apps</p>
+<h3 id="token-lifetimes-defaults">Token lifetimes (defaults)</h3>
+<ul>
+<li>access token: <strong>1 hour</strong></li>
+<li>refresh token: <strong>up to 30 days</strong>
+  Token lifetimes are enforced by the IdP and should not be extended by clients.</li>
+</ul>
+<h3 id="required-token-validation-behaviour">Required token validation behaviour</h3>
+<p>Every service should validate:
+- signature (via JWKS)
+- issuer (<code>iss</code>)
+- audience (<code>aud</code>)
+- expiry (<code>exp</code>)
+- not-before (<code>nbf</code>)
+- required scopes/entitlements</p>
+<p><strong>Security rule:</strong> tokens must not be logged or stored in plaintext.</p>
+<h2 id="342-authorisation-models-rbacabac-and-policy-enforcement">3.4.2 Authorisation models (RBAC/ABAC and policy enforcement)</h2>
+<p>Authorisation determines what authenticated users/systems may do. A consistent model is based on:
+- Check-in entitlements (roles),
+- group membership (virtual organisations and subgroups),
+- resource-level rights metadata,
+- optional attribute-based restrictions.</p>
+<h3 id="role-and-group-model">Role and group model</h3>
+<p>Check-in provides role/group membership via entitlement strings.</p>
+<p><strong>Typical entitlement patterns (examples):</strong>
+- <code>urn:mace:egi.eu:group:vo.chcloud.eu:role=member#aai.egi.eu</code>
+- <code>urn:mace:egi.eu:group:vo.chcloud.eu:role=admin#aai.egi.eu</code>
+- <code>urn:mace:egi.eu:group:vo.chcloud.eu:collection-x:role=curator#aai.egi.eu</code></p>
+<p>Entitlements encode:
+- VO identifier,
+- optional subgroup (domain/collection/project),
+- role,
+- authoritative namespace.</p>
+<h3 id="required-authorisation-behaviour">Required authorisation behaviour</h3>
+<ul>
+<li>extract roles/groups from OIDC entitlements</li>
+<li>map entitlements to local permissions using documented rules</li>
+<li>avoid maintaining independent/conflicting role stores</li>
+<li>enforce consistent responses:<ul>
+<li><code>401 Unauthorized</code>: missing/invalid token</li>
+<li><code>403 Forbidden</code>: valid token but insufficient permissions</li>
+</ul>
+</li>
+</ul>
+<h3 id="rbac-and-abac-support">RBAC and ABAC support</h3>
+<ul>
+<li><strong>RBAC</strong>: roles define broad capabilities (viewer/editor/curator/admin)</li>
+<li><strong>ABAC</strong>: attributes constrain access (sensitivity, embargo, rights, affiliation)
+  Services may combine both (e.g., role grants write; attribute gates resource access).</li>
+</ul>
+<h3 id="machine-to-machine-authorisation">Machine-to-machine authorisation</h3>
+<ul>
+<li>OAuth2 Client Credentials flow</li>
+<li>short-lived JWTs</li>
+<li>mTLS where appropriate for internal service links</li>
+</ul>
+<hr />
+<h2 id="343-api-security-standards">3.4.3 API security standards</h2>
+<p>APIs are the primary interoperability mechanism and must behave securely across institutional boundaries.</p>
+<h3 id="transport-security">Transport security</h3>
+<ul>
+<li>HTTPS/TLS <strong>1.2+</strong> for all services</li>
+<li>disable plain HTTP (redirect or reject)</li>
+<li>prefer strong cipher suites; avoid deprecated algorithms</li>
+<li>internal services may enforce <strong>mTLS</strong> where appropriate</li>
+</ul>
+<h3 id="token-handling">Token handling</h3>
+<ul>
+<li>accept only OIDC JWTs issued by EGI Check-in (where auth applies)</li>
+<li>pass tokens via <code>Authorization: Bearer &lt;token&gt;</code></li>
+<li>cookies only for browser flows and must be <code>Secure</code> + <code>HttpOnly</code></li>
+<li>never log access tokens</li>
+<li>validate signature/time/audience/expiry</li>
+</ul>
+<h3 id="api-authorisation-patterns">API authorisation patterns</h3>
+<ul>
+<li><strong>Method-level</strong> rules: endpoint-by-endpoint role requirements</li>
+<li><strong>Resource-level</strong> rules: rights/attributes per resource (public/restricted/embargoed/sensitive)</li>
+</ul>
+<h3 id="standard-security-headers-configurable">Standard security headers (configurable)</h3>
+<ul>
+<li>Strict-Transport-Security</li>
+<li>Content-Security-Policy</li>
+<li>X-Content-Type-Options</li>
+<li>Referrer-Policy</li>
+<li>Cross-Origin-Resource-Policy</li>
+</ul>
+<hr />
+<h2 id="344-data-privacy-and-protection-gdpr-supporting-technical-practices">3.4.4 Data privacy and protection (GDPR-supporting technical practices)</h2>
+<p>This documentation does not define legal obligations; it specifies technical mechanisms that support compliance and consistent interoperable behaviour.</p>
+<h3 id="data-minimisation-and-redaction">Data minimisation and redaction</h3>
+<ul>
+<li>avoid exposing personal data unnecessarily</li>
+<li>provide configurable redaction pipelines</li>
+<li>explicitly mark sensitive fields where applicable</li>
+</ul>
+<h3 id="pseudonymisation">Pseudonymisation</h3>
+<ul>
+<li>use persistent pseudonyms for internal linking</li>
+<li>avoid embedding personal identifiers in filenames, URLs, manifests</li>
+</ul>
+<h3 id="logging-and-auditability">Logging and auditability</h3>
+<p>Logs should include:
+- timestamp
+- user/service identity (token claims)
+- operation performed
+- resource identifier</p>
+<p>Logs must not include:
+- access tokens
+- passwords
+- full payloads containing personal data (unless explicitly justified and protected)</p>
+<h3 id="provenance-for-privacy-decisions">Provenance for privacy decisions</h3>
+<p>Maintain provenance trails for:
+- which service produced/modified data
+- how transformations impacted personal data
+- which access policies were applied</p>
+<hr />
+<h2 id="345-rights-management-and-technical-enforcement">3.4.5 Rights management and technical enforcement</h2>
+<p>Rights and licence metadata may drive technical enforcement decisions (access control and workflow restrictions such as embargoes or culturally sensitive material).</p>
+<p><strong>Implementation guidance:</strong> services performing authorisation/policy enforcement should be able to consume machine-readable rights/licence metadata and apply consistent enforcement when required.</p>
+<p>Example mapping:
+- Public domain / CC0: full download; derivatives permitted
+- CC BY: sharing allowed; attribution must propagate in metadata
+- Restricted: block full-resolution; allow previews
+- Embargoed: hide until embargo expiry
+- Culturally sensitive: restrict to specific groups</p>
+<p>(See the dedicated “rights and licensing” guidance page for vocabularies and mapping patterns.)</p>
+<h2 id="346-security-in-deployment-and-infrastructure-links-to-33">3.4.6 Security in deployment and infrastructure (links to §3.3)</h2>
+<p>Deployment security impacts interoperability and trust.</p>
+<h3 id="container-and-runtime-security">Container and runtime security</h3>
+<ul>
+<li>use signed OCI-compliant images</li>
+<li>perform vulnerability scanning in CI pipelines</li>
+<li>avoid hardcoded secrets in images or manifests</li>
+</ul>
+<h3 id="secret-management">Secret management</h3>
+<ul>
+<li>use vault-based secret stores (e.g., Vault / KMS-backed secrets)</li>
+<li>rotate secrets regularly</li>
+<li>never embed secrets in repositories</li>
+</ul>
+<h3 id="network-security">Network security</h3>
+<ul>
+<li>expose only required ports</li>
+<li>segment internal traffic</li>
+<li>protect external endpoints behind gateways/ingress controllers</li>
+</ul>
+<h3 id="monitoring-and-incident-response">Monitoring and incident response</h3>
+<ul>
+<li>standardised logging formats (e.g., OpenTelemetry)</li>
+<li>health endpoints (e.g., <code>/healthz</code>, <code>/readyz</code>)</li>
+<li>support centralised alerting for downtime/anomalous activity</li>
+</ul>
+<h2 id="347-security-expectations-by-interoperability-level-overview">3.4.7 Security expectations by interoperability level (overview)</h2>
+<ul>
+<li><strong>Level 1 (Basic)</strong>: HTTPS mandatory; optional authentication; basic access restrictions</li>
+<li><strong>Level 2 (Enhanced)</strong>: mandatory AAI integration (EGI Check-in); OIDC tokens; RBAC; protected APIs</li>
+<li><strong>Level 3 (Full)</strong>: fine-grained ABAC; rights-aware policy enforcement; provenance tracking; encrypted service-to-service communication (mTLS)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
